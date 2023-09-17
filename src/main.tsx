@@ -33,23 +33,29 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <h2 className="text-center text-3xl font-semibold text-orange-900 md:text-5xl">0</h2>
       </div>
       <div className="flex justify-center gap-1">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
-          2x
+        <div className="flex h-12 w-12 flex-col items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
+          <div>2x</div>
+          <div className="text-xs">1K</div>
         </div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
-          4x
+        <div className="flex h-12 w-12 flex-col items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
+          <div>4x</div>
+          <div className="text-xs">10K</div>
         </div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
-          8x
+        <div className="flex h-12 w-12 flex-col items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
+          <div>8x</div>
+          <div className="text-xs">100K</div>
         </div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
-          16x
+        <div className="flex h-12 w-12 flex-col items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
+          <div>16x</div>
+          <div className="text-xs">1M</div>
         </div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
-          32x
+        <div className="flex h-12 w-12 flex-col items-center justify-center rounded-lg border-2 border-orange-900 bg-orange-200">
+          <div>32x</div>
+          <div className="text-xs">10M</div>
         </div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-orange-600 bg-orange-300">
-          64x
+        <div className="flex h-12 w-12 flex-col items-center justify-center rounded-lg border-2 border-orange-600 bg-orange-300">
+          <div>64x</div>
+          <div className="text-xs">100M</div>
         </div>
       </div>
       <div className="my-2">
