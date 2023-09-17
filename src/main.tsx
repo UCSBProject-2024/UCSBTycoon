@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <main className="md:container md:mx-auto">
       <div className="my-8">
         <h1 className="mx-8 rounded-lg border-2 border-orange-600 bg-orange-200 p-2 text-center text-3xl font-semibold text-orange-900 md:p-4 md:text-5xl">
-          The Bakery City
+          The Bakery
         </h1>
       </div>
       <div className="my-8 flex flex-col items-center">
@@ -54,6 +54,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </div>
       <div className="my-2">
         <p className="text-center text-sm">Buy some items and multiply your production.</p>
+      </div>
+      <div className="my-4 text-center">
+        <button className="rounded-lg bg-orange-900 px-8 py-2 text-white">Restart Game!</button>
       </div>
     </main>
   </React.StrictMode>
