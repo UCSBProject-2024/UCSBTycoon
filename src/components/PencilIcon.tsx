@@ -10,7 +10,7 @@ export function PencilIcon({ onClick }: Props) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="absolute end-3 top-1/2 h-6 w-6 -translate-y-1/2 md:h-10 md:w-10"
+      className="absolute end-3 top-1/2 h-6 w-6 -translate-y-1/2 cursor-pointer md:h-10 md:w-10"
       onClick={onClick}>
       <path
         strokeLinecap="round"

@@ -6,7 +6,7 @@ export function CakeIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="h-48 w-48 stroke-orange-900">
+      className="h-48 w-48 cursor-pointer stroke-orange-900">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
