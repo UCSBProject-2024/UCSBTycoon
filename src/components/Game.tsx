@@ -1,9 +1,19 @@
+import { useEffect } from 'react';
+import { useGameDispatch } from '../hooks/useGameDispatch';
 import { Header } from './Header';
 import { CakeIcon } from './CakeIcon';
 import { GameTitle } from './GameTitle';
 import { GameTools } from './GameTools';
 
 export function Game() {
+  const gameDispatch = useGameDispatch();
+
+  useEffect(() => {
+    if (gameDispatch) {
+      gameDispatch({ type: 'reload' });
+    }
+  }, [gameDispatch]);
+
   return (
     <>
       <Header />
