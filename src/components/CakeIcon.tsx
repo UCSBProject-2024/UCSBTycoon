@@ -1,4 +1,8 @@
-export function CakeIcon() {
+type Props = {
+  onClick: () => void;
+};
+
+export function CakeIcon({ onClick }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +10,8 @@ export function CakeIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="h-48 w-48 cursor-pointer stroke-orange-900">
+      className="h-48 w-48 cursor-pointer stroke-orange-900"
+      onClick={onClick}>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

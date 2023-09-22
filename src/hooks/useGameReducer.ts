@@ -1,7 +1,10 @@
 import { useImmerReducer } from 'use-immer';
 import { Game } from '../domains';
 
-export type GameReducerAction = { type: 'reload' | 'reset' } | { type: 'update'; subtype: 'title'; title: string };
+export type GameReducerAction =
+  | { type: 'reload' | 'reset' }
+  | { type: 'update'; subtype: 'title'; title: string }
+  | { type: 'update'; subtype: 'cookies' };
 
 export function useGameReducer() {
   return useImmerReducer(gameReducer, null as unknown as Game);
@@ -31,6 +34,11 @@ function gameReducer(draft: Game, action: GameReducerAction) {
       switch (action.subtype) {
         case 'title': {
           draft.title = action.title;
+          setGameToLocalStorage(draft);
+          return draft;
+        }
+        case 'cookies': {
+          draft.cookies = draft.cookies + 1;
           setGameToLocalStorage(draft);
           return draft;
         }
