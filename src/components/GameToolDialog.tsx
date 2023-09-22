@@ -19,7 +19,7 @@ export function GameToolDialog({ tool, onClose }: Props) {
     onClose();
   }
 
-  const allowed = game ? game?.cookies >= tool.price : false;
+  const notEnoughCookies = game ? game?.cookies < tool.price : false;
 
   return (
     <ModalDialog className="rounded-xl border-2 border-orange-600" show={true} onHide={onClose}>
@@ -30,7 +30,13 @@ export function GameToolDialog({ tool, onClose }: Props) {
         </div>
       </div>
       <div className="p-3">
-        {allowed ? <p>Do you really want to activate the tool?</p> : <p>You don't have enough cookies!</p>}
+        {tool.active ? (
+          <p>The tool is already activated!</p>
+        ) : notEnoughCookies ? (
+          <p>You don't have enough cookies!</p>
+        ) : (
+          <p>Do you really want to activate the tool?</p>
+        )}
       </div>
       <div className="border-t p-3">
         <div className="flex justify-end gap-1">
@@ -40,7 +46,7 @@ export function GameToolDialog({ tool, onClose }: Props) {
           <button
             className="rounded-lg bg-orange-900 px-6 py-1 text-white"
             onClick={handleActivate}
-            disabled={!allowed}>
+            disabled={notEnoughCookies || tool.active}>
             Activate
           </button>
         </div>
