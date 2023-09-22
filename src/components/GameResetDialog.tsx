@@ -9,7 +9,7 @@ export type Props = {
 export function GameResetDialog({ onClose }: Props) {
   const gameDispatch = useGameDispatch();
 
-  function handleDelete() {
+  function handleReset() {
     if (!gameDispatch) return;
     gameDispatch({ type: 'reset' });
     onClose();
@@ -31,8 +31,8 @@ export function GameResetDialog({ onClose }: Props) {
           <button className="rounded-lg bg-orange-300 px-6 py-1" onClick={onClose}>
             Close
           </button>
-          <button className="rounded-lg bg-orange-900 px-6 py-1 text-white" onClick={handleDelete}>
-            Delete
+          <button className="rounded-lg bg-orange-900 px-6 py-1 text-white" onClick={handleReset}>
+            Reset
           </button>
         </div>
       </div>
