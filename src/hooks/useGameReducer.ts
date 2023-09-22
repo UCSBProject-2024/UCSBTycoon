@@ -1,10 +1,11 @@
 import { useImmerReducer } from 'use-immer';
-import { Game } from '../domains';
+import { Game, Tool } from '../domains';
 
 export type GameReducerAction =
   | { type: 'reload' | 'reset' }
   | { type: 'update'; subtype: 'title'; title: string }
-  | { type: 'update'; subtype: 'cookies' };
+  | { type: 'update'; subtype: 'cookies' }
+  | { type: 'update'; subtype: 'tools'; id: number };
 
 export function useGameReducer() {
   return useImmerReducer(gameReducer, null as unknown as Game);
@@ -22,7 +23,7 @@ const INITIAL_GAME = {
     { id: 5, multiplicator: 32, price: 10_000_000, active: false },
     { id: 6, multiplicator: 64, price: 100_000_000, active: false }
   ],
-  cookies: 0
+  cookies: 100_000_000
 };
 
 function gameReducer(draft: Game, action: GameReducerAction) {
@@ -38,7 +39,15 @@ function gameReducer(draft: Game, action: GameReducerAction) {
           return draft;
         }
         case 'cookies': {
-          draft.cookies = draft.cookies + 1;
+          draft.cookies = draft.cookies + calculateMultiplicator(draft.tools);
+          setGameToLocalStorage(draft);
+          return draft;
+        }
+        case 'tools': {
+          const tool = draft.tools.find((tool) => tool.id === action.id);
+          if (!tool) return draft;
+          draft.cookies = draft.cookies - tool.price;
+          tool.active = true;
           setGameToLocalStorage(draft);
           return draft;
         }
@@ -62,4 +71,11 @@ function getGameFromLocalStorage() {
 
 function setGameToLocalStorage(game: Game) {
   localStorage.setItem(LOCAL_STORAGE_COOKIE_CLICKER_GAME_KEY, JSON.stringify(game));
+}
+
+function calculateMultiplicator(tools: Tool[]) {
+  return tools.reduce((total, tool) => {
+    if (!tool.active) return total;
+    return total * tool.multiplicator;
+  }, 1);
 }
