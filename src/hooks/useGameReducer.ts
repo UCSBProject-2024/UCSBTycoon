@@ -23,7 +23,7 @@ const INITIAL_GAME = {
     { id: 5, multiplicator: 32, price: 10_000_000, active: false },
     { id: 6, multiplicator: 64, price: 100_000_000, active: false }
   ],
-  cookies: 100_000_000
+  cookies: 0
 };
 
 function gameReducer(draft: Game, action: GameReducerAction) {
