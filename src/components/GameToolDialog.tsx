@@ -43,12 +43,11 @@ export function GameToolDialog({ tool, onClose }: Props) {
           <button className="rounded-lg bg-orange-300 px-6 py-1" onClick={onClose}>
             Close
           </button>
-          <button
-            className="rounded-lg bg-orange-900 px-6 py-1 text-white"
-            onClick={handleActivate}
-            disabled={notEnoughCookies || tool.active}>
-            Activate
-          </button>
+          {!(notEnoughCookies || tool.active) && (
+            <button className="rounded-lg bg-orange-900 px-6 py-1 text-white" onClick={handleActivate}>
+              Activate
+            </button>
+          )}
         </div>
       </div>
     </ModalDialog>
