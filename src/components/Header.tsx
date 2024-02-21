@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function Header() {
   return (
     <header className="bg-orange-900 py-2">

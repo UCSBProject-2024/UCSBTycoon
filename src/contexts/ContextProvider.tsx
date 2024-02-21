@@ -1,6 +1,7 @@
 import { Dispatch, createContext } from 'react';
 import { GameReducerAction, useGameReducer } from '../hooks/useGameReducer';
 import { Game } from '../domains';
+import React from 'react';
 
 export const GameContext = createContext<Game | null>(null);
 export const GameDispatchContext = createContext<Dispatch<GameReducerAction> | null>(null);

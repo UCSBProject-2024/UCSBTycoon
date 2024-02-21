@@ -1,5 +1,6 @@
 import { GameToolDetail } from './GameToolDetail';
-import { useGame } from '../hooks/useGame.ts';
+import { useGame } from '../hooks/useGame';
+import React from 'react';
 
 export function GameTools() {
   const game = useGame();

@@ -1,6 +1,7 @@
 import { useGameDispatch } from '../hooks/useGameDispatch';
 import { ModalDialog } from './ModalDialog';
 import { CloseIcon } from './CloseIcon';
+import React from 'react';
 
 export type Props = {
   onClose: () => void;

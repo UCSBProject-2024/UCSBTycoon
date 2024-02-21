@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PencilIcon } from './PencilIcon';
 import { GameTitleEditDialog } from './GameTitleEditDialog';
 import { useGame } from '../hooks/useGame';
+import React from 'react';
 
 export function GameTitle() {
   const [show, setShow] = useState(false);

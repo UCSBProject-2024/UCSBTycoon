@@ -5,6 +5,7 @@ import { GameTitle } from './GameTitle';
 import { GameCookie } from './GameCookie';
 import { GameTools } from './GameTools';
 import { GameReset } from './GameReset';
+import React from 'react';
 
 export function Game() {
   const gameDispatch = useGameDispatch();

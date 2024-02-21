@@ -3,6 +3,7 @@ import { CloseIcon } from './CloseIcon';
 import { useGame } from '../hooks/useGame';
 import { useGameDispatch } from '../hooks/useGameDispatch';
 import { Tool } from '../domains';
+import React from 'react';
 
 export type Props = {
   tool: Tool;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { GameResetDialog } from './GameResetDialog';
+import React from 'react';
 
 export function GameReset() {
   const [show, setShow] = useState(false);

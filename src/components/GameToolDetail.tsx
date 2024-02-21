@@ -2,6 +2,7 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import { Tool } from '../domains';
 import { GameToolDialog } from './GameToolDialog';
+import React from 'react';
 
 type Props = { tool: Tool };
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useGame } from '../hooks/useGame';
 import { useGameDispatch } from '../hooks/useGameDispatch';
 import { CakeIcon } from './CakeIcon';
