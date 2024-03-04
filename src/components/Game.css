@@ -1,13 +1,10 @@
 .SplitScreen {
     display: flex;
-    
-
-    .MapLeft{
+  }
+  .MapLeft{
       width: 70%;
     }
 
     .ControlsRight{
       width: 30%;
     }
-
-  }
