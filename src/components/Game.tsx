@@ -7,6 +7,7 @@ import { GameTools } from './GameTools';
 import { GameReset } from './GameReset';
 import React from 'react';
 import './Game.css';
+import DrawerRight from './Drawer';
 
 export function Game() {
   const gameDispatch = useGameDispatch();
@@ -25,6 +26,7 @@ export function Game() {
           <MapWindow />
         </div>
         <div className="ControlsRight">
+          <DrawerRight />
           <GameCookie />
           <GameTools />
           <GameReset />

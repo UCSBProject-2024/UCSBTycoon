@@ -2,7 +2,7 @@
     position: relative;
     top: 10%;
     left: 0;
-    width: 45vw; /* 100% of the viewport width */
+    width: 55vw; /* 100% of the viewport width */
     height: 90vh; /* 100% of the viewport height */
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.5);
