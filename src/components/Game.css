@@ -1,5 +1,16 @@
 .SplitScreen {
     display: flex;
-    height: 100vh; /* 100% of the viewport height */
+    
+
+    .MapLeft{
+      width: 70%;
+    }
+
+    .ControlsRight{
+      width: 30%;
+    }
+
   }
   
+
+ 
