@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PencilIcon } from './PencilIcon';
 import { GameTitleEditDialog } from './GameTitleEditDialog';
 import { useGame } from '../hooks/useGame';
