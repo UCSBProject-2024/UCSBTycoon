@@ -25,7 +25,7 @@ const DrawerRight = () => {
         open={isOpen}
         onClose={toggleDrawer}
         direction="right" // Set the direction to open the drawer from the right
-        style={{ width: '50vw' }} // Use viewport width for responsive drawer width
+        style={{ width: '30vw' }} // Use viewport width for responsive drawer width
       >
         <h2>Drawer Content</h2>
         <p>This is the content inside the drawer!</p>
