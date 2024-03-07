@@ -39,8 +39,7 @@ export function Game() {
         <div className="ControlsRight">
           <DrawerRight />
           <GameCookie />
-          <GameTools />
-          <GameReset />
+        
         </div>
       </div>
     </>
