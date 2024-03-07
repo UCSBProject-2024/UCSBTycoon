@@ -18,6 +18,18 @@ export function Game() {
     }
   }, [gameDispatch]);
 
+  useEffect(() => {
+    fetch('Data.json')
+      .then((response) => response.json())
+      .then((data) => {
+        // Process the data here
+        localStorage.setItem('gameData', JSON.stringify(data));
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, [gameDispatch]);
+
   return (
     <>
       <Header />
