@@ -8,6 +8,7 @@ interface BuildingProps {
   width: number;
   height: number;
   hasBeenBought?: boolean;
+  src: string;
 }
 
 const Map: React.FC = () => {
@@ -26,16 +27,17 @@ const Map: React.FC = () => {
       .then((data) => {
         const newBuildings: BuildingProps[] = [];
         for (let i = 0; i < data.KnowledgeBuildings?.MultiplierBuildings?.length; i++) {
-          newBuildings.push(data.KnowledgeBuildings.MultiplierBuildings[i]);
+          newBuildings.push({ ...data.KnowledgeBuildings.MultiplierBuildings[i], hasBeenBought: false });
+          console.log(newBuildings[i]);
         }
         for (let i = 0; i < data.KnowledgeBuildings?.IncomeBuildings?.length; i++) {
-          newBuildings.push(data.KnowledgeBuildings.IncomeBuildings[i]);
+          newBuildings.push({ ...data.KnowledgeBuildings.IncomeBuildings[i], hasBeenBought: false });
         }
         for (let i = 0; i < data.MoneyBuildings?.MultiplierBuildings?.length; i++) {
-          newBuildings.push(data.MoneyBuildings.MultiplierBuildings[i]);
+          newBuildings.push({ ...data.MoneyBuildings.MultiplierBuildings[i], hasBeenBought: false });
         }
         for (let i = 0; i < data.MoneyBuildings?.IncomeBuildings?.length; i++) {
-          newBuildings.push(data.MoneyBuildings.IncomeBuildings[i]);
+          newBuildings.push({ ...data.MoneyBuildings.IncomeBuildings[i], hasBeenBought: false });
         }
         setBuildingArray(newBuildings);
       });
@@ -65,6 +67,7 @@ const Map: React.FC = () => {
           y={building.y}
           width={building.width}
           height={building.height}
+          src={building.src}
           hasBeenBought={building.hasBeenBought}
         />
       ))}

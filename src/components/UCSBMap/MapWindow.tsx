@@ -4,7 +4,11 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import Map from './Map';
 const MapWindow = () => {
   return (
-    <TransformWrapper initialScale={2.5} limitToBounds={true} disablePadding={true}>
+    <TransformWrapper
+      initialScale={2.5}
+      limitToBounds={true}
+      disablePadding={true}
+      panning={{ velocityDisabled: true }}>
       <TransformComponent>
         <Map />
       </TransformComponent>

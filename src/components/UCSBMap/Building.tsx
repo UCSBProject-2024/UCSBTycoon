@@ -6,9 +6,10 @@ interface BuildingProps {
   width: number;
   height: number;
   hasBeenBought?: boolean;
+  src: string;
 }
 
-const Building: React.FC<BuildingProps> = ({ x, y, width, height }) => {
+const Building: React.FC<BuildingProps> = ({ x, y, width, height, src }) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
@@ -25,11 +26,14 @@ const Building: React.FC<BuildingProps> = ({ x, y, width, height }) => {
         top: y + '%',
         width: width + '%',
         height: height + '%',
-        backgroundColor: isClicked ? 'blue' : 'red',
         cursor: 'pointer'
       }}
       onClick={handleClick}>
-      {/* Replace with your building image */}
+      {isClicked ? (
+        <img src={src} alt="Building" style={{ width: '100%', height: '100%' }} />
+      ) : (
+        <div style={{ backgroundColor: 'grey', width: '100%', height: '100%' }} />
+      )}
     </div>
   );
 };
