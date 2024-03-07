@@ -8,6 +8,7 @@ interface BuildingProps {
   width: number;
   height: number;
   hasBeenBought?: boolean;
+  src: string;
 }
 
 const Map: React.FC = () => {
@@ -66,7 +67,8 @@ const Map: React.FC = () => {
           width={building.width}
           height={building.height}
           hasBeenBought={building.hasBeenBought}
-          src={''}        />
+          src={building.src}
+        />
       ))}
       <img src={MapImg} alt={'UCSBMap'} style={{ width: imageWidth + 'px', height: imageHeight + 'px' }} />
     </>

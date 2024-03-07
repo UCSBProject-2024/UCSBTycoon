@@ -32,7 +32,6 @@ export function Game() {
 
   return (
     <>
-      <Header />
       <div className="SplitScreen">
         <div className="MapLeft">
           <MapWindow />
