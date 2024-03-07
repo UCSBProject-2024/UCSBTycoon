@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
 import styled from 'styled-components';
+import MonetaryBuildings from './MonetaryBuildings';
 import './Drawer.css';
 // Use viewport units or percentages for a responsive design
 
@@ -43,8 +44,9 @@ const DrawerRight = () => {
         direction="right" // Set the direction to open the drawer from the right
         style={{ width: '30vw' }} // Use viewport width for responsive drawer width
       >
-        <h2>Drawer Content</h2>
-        <p>This is the content inside the drawer!</p>
+        <h2>Gaucho Store</h2>
+        <p>Buy upgrades with your Gaucho Bucks!</p>
+        <MonetaryBuildings/>
       </Drawer>
     </div>
   );

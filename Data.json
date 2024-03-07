@@ -4,7 +4,7 @@
             "MultiplierBuildings": [
                 {
                     "name": "Library",
-                    "description": "This is a knowledge building.",
+                    "description": "This is a knowledge multiplier building.",
                     "src": "./public/Images/LibraryImg.png",
                     "x": 55,
                     "y": 45,
@@ -13,8 +13,8 @@
                     "hasBeenBought": false
                 },
                 {
-                    "name": "Knowledge Building 2",
-                    "description": "This is another knowledge building.",
+                    "name": "CLAS",
+                    "description": "This is another knowledge multiplier building.",
                     "src": "",
                     "x": 15,
                     "y": 25,
@@ -25,8 +25,8 @@
             ],
             "IncomeBuildings": [
                 {
-                    "name": "Knowledge Building 1",
-                    "description": "This is a knowledge building.",
+                    "name": "Buchanan Hall",
+                    "description": "This is a knowledge generator building.",
                     "src": "",
                     "x": 30,
                     "y": 40,
@@ -35,8 +35,8 @@
                     "hasBeenBought": false
                 },
                 {
-                    "name": "Knowledge Building 2",
-                    "description": "This is another knowledge building.",
+                    "name": "Phelps Hall",
+                    "description": "This is another knowledge generator building.",
                     "src": "",
                     "x": 35,
                     "y": 45,
@@ -50,8 +50,8 @@
         {
             "MultiplierBuildings": [
                 {
-                    "name": "Knowledge Building 1",
-                    "description": "This is a Money building.",
+                    "name": "Money Multiplier 2",
+                    "description": "This is a money multiplier building.",
                     "src": "",
                     "x": 50,
                     "y": 60,
@@ -60,8 +60,8 @@
                     "hasBeenBought": false
                 },
                 {
-                    "name": "Knowledge Building 2",
-                    "description": "This is another money building.",
+                    "name": "University Center(UCEN)",
+                    "description": "This is another money multiplier building.",
                     "src": "",
                     "x": 55,
                     "y": 65,
@@ -72,8 +72,8 @@
             ],
             "IncomeBuildings": [
                 {
-                    "name": "Knowledge Building 1",
-                    "description": "This is a money building.",
+                    "name": "Arbor",
+                    "description": "This is a money generator building.",
                     "src": "",
                     "x": 70,
                     "y": 80,
@@ -82,8 +82,8 @@
                     "hasBeenBought": false
                 },
                 {
-                    "name": "Knowledge Building 2",
-                    "description": "This is another money building.",
+                    "name": "Anacapa",
+                    "description": "This is another money generator building.",
                     "src": "",
                     "x": 75,
                     "y": 85,
