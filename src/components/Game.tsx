@@ -32,6 +32,7 @@ export function Game() {
 
   return (
     <>
+      <Header />
       <div className="SplitScreen">
         <div className="MapLeft">
           <MapWindow />
@@ -39,7 +40,6 @@ export function Game() {
         <div className="ControlsRight">
           <DrawerRight />
           <GameCookie />
-        
         </div>
       </div>
     </>
