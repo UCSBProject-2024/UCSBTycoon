@@ -5,11 +5,11 @@
                 {
                     "name": "Library",
                     "description": "This is a knowledge multiplier building.",
-                    "src": "./public/Images/LibraryImg.png",
-                    "x": 50,
-                    "y": 40,
-                    "width": 5,
-                    "height": 10,
+                    "src": "./Images/LibraryImg.png",
+                    "x": 0.354,
+                    "y": 0.387,
+                    "width": 0.045,
+                    "height": 0.11,
                     "hasBeenBought": false
                 },
                 {
@@ -18,8 +18,8 @@
                     "src": "",
                     "x": -10,
                     "y": -10,
-                    "width": 3,
-                    "height": 5,
+                    "width": 0.1,
+                    "height": 0.1,
                     "hasBeenBought": false
                 }
             ],
@@ -30,8 +30,8 @@
                     "src": "",
                     "x": -10,
                     "y": -10,
-                    "width": 3,
-                    "height": 5,
+                    "width": 0.1,
+                    "height": 0.1,
                     "hasBeenBought": false
                 },
                 {
@@ -40,8 +40,8 @@
                     "src": "",
                     "x": -10,
                     "y": -10,
-                    "width": 3,
-                    "height": 5,
+                    "width": 0.1,
+                    "height": 0.1,
                     "hasBeenBought": false
                 }
             ]
@@ -55,8 +55,8 @@
                     "src": "",
                     "x": -10,
                     "y": -10,
-                    "width": 3,
-                    "height": 5,
+                    "width": 0.1,
+                    "height": 0.1,
                     "hasBeenBought": false
                 },
                 {
@@ -65,8 +65,8 @@
                     "src": "",
                     "x": -10,
                     "y": -10,
-                    "width": 3,
-                    "height": 5,
+                    "width": 0.1,
+                    "height": 0.1,
                     "hasBeenBought": false
                 }
             ],
@@ -77,8 +77,8 @@
                     "src": "",
                     "x": -10,
                     "y": -10,
-                    "width": 3,
-                    "height": 5,
+                    "width": 0.1,
+                    "height": 0.1,
                     "hasBeenBought": false
                 },
                 {
@@ -87,8 +87,8 @@
                     "src": "",
                     "x": -10,
                     "y": -10,
-                    "width": 3,
-                    "height": 5,
+                    "width": 0.1,
+                    "height": 0.1,
                     "hasBeenBought": false
                 }
             ]

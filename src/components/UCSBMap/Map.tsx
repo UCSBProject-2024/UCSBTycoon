@@ -64,13 +64,20 @@ const Map: React.FC = () => {
           key={index}
           x={building.x}
           y={building.y}
+          imageWidth={imageWidth}
+          imageHeight={imageHeight}
           width={building.width}
           height={building.height}
           hasBeenBought={building.hasBeenBought}
           src={building.src}
         />
       ))}
-      <img src={MapImg} alt={'UCSBMap'} style={{ width: imageWidth + 'px', height: imageHeight + 'px' }} />
+      <img
+        src={MapImg}
+        alt={'UCSBMap'}
+        //DO NOT CHANGE 140 WITHOUT TELLING CHRIS
+        style={{ width: imageWidth + 'px', height: imageHeight + 'px', paddingBottom: 140 }}
+      />
     </>
   );
 };
