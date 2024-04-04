@@ -23,16 +23,13 @@
 //   );
 // }
 
-
-
 import React from 'react';
 
 type Props = {
   onClick: () => void;
 };
 
-export function CakeIcon({ onClick }: Props) {  
-
+export function CakeIcon({ onClick }: Props) {
   return (
     <img
       src={'/Images/GauchoBuck.png'}
@@ -41,6 +38,6 @@ export function CakeIcon({ onClick }: Props) {
       onClick={onClick}
     />
   );
-};
+}
 
 export default CakeIcon;

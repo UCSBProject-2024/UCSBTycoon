@@ -15,6 +15,7 @@ export function Game() {
   useEffect(() => {
     if (gameDispatch) {
       gameDispatch({ type: 'reload' });
+      console.log('reloaded game');
     }
   }, [gameDispatch]);
 
