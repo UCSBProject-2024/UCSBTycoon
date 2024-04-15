@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Building';
 import Building from './Building';
-
+import { getBuildingData } from '../../hooks/useGameReducer';
 interface BuildingProps {
   x: number;
   y: number;
@@ -20,27 +20,11 @@ const Map: React.FC = () => {
   const [imageWidth, setImageWidth] = useState<number>(window.innerWidth);
   const [imageHeight, setImageHeight] = useState<number>(window.innerWidth);
 
-  // Fill building array with building components made with Data.json\
   useEffect(() => {
-    fetch('/Data.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const newBuildings: BuildingProps[] = [];
-        for (let i = 0; i < data.KnowledgeBuildings?.MultiplierBuildings?.length; i++) {
-          newBuildings.push(data.KnowledgeBuildings.MultiplierBuildings[i]);
-        }
-        for (let i = 0; i < data.KnowledgeBuildings?.IncomeBuildings?.length; i++) {
-          newBuildings.push(data.KnowledgeBuildings.IncomeBuildings[i]);
-        }
-        for (let i = 0; i < data.MoneyBuildings?.MultiplierBuildings?.length; i++) {
-          newBuildings.push(data.MoneyBuildings.MultiplierBuildings[i]);
-        }
-        for (let i = 0; i < data.MoneyBuildings?.IncomeBuildings?.length; i++) {
-          newBuildings.push(data.MoneyBuildings.IncomeBuildings[i]);
-        }
-        setBuildingArray(newBuildings);
-      });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    async function fetchData() {
+      setBuildingArray(await getBuildingData());
+    }
+    fetchData();
   }, []);
 
   //Adjust image size as windowwidth is changed
@@ -53,25 +37,22 @@ const Map: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    console.log(buildingArray);
-  }, [buildingArray]);
-
   return (
     <>
-      {buildingArray.map((building, index) => (
-        <Building
-          key={index}
-          x={building.x}
-          y={building.y}
-          imageWidth={imageWidth}
-          imageHeight={imageHeight}
-          width={building.width}
-          height={building.height}
-          hasBeenBought={building.hasBeenBought}
-          src={building.src}
-        />
-      ))}
+      {buildingArray &&
+        buildingArray.map((building, index) => (
+          <Building
+            key={index}
+            x={building.x}
+            y={building.y}
+            imageWidth={imageWidth}
+            imageHeight={imageHeight}
+            width={building.width}
+            height={building.height}
+            hasBeenBought={building.hasBeenBought}
+            src={building.src}
+          />
+        ))}
       <img
         src={MapImg}
         alt={'UCSBMap'}
