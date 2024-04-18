@@ -12,11 +12,11 @@ interface BuildingProps {
 const MonetaryBuildings: React.FC = () => {
   // Make building array with useState
   const [buildingArray, setBuildingArray] = useState<BuildingProps[]>([]);
-  const [data, setData] = useState([]);
+  //const [data, setData] = useState([]);
   useEffect(() => {
     const initialData = localStorage.getItem('gameData');
-    const parsedData = JSON.parse(initialData);
-    setData(parsedData);
+    const parsedData = JSON.parse(initialData as string);
+    //setData(parsedData);
 
     const newBuildings: BuildingProps[] = [];
     if (parsedData && parsedData.KnowledgeBuildings && parsedData.KnowledgeBuildings.MultiplierBuildings) {
@@ -48,9 +48,8 @@ const MonetaryBuildings: React.FC = () => {
   }, []);
 
   const handleClick = (buildingName: string) => () => {
-    console.log('Building clicked:', buildingName);     //Says what building is clicked
-                                                        //sends building name to backend
-    
+    console.log('Building clicked:', buildingName); //Says what building is clicked
+    //sends building name to backend
   };
 
   return (
