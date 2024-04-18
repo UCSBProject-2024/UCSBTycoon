@@ -7,7 +7,8 @@
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "build:dist": "react-build-dist"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -16,6 +17,7 @@
     "immer": "^10.0.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
+    "react-build-dist": "^0.0.8",
     "react-dom": "^18.2.0",
     "react-modern-drawer": "^1.2.2",
     "react-scripts": "^5.0.1",
