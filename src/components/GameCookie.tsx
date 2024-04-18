@@ -13,7 +13,7 @@ export function GameCookie() {
 
   function handleClick() {
     if (!gameDispatch) return;
-    gameDispatch({ type: 'update', subtype: 'cookies' });
+    gameDispatch({ type: 'update', subtype: 'cash' });
     if (!isAnimationPlaying) {
       setIsAnimationVisible(true);
     }
@@ -40,7 +40,7 @@ export function GameCookie() {
         <p className="text-xs text-gray-600" style={{ position: 'absolute', top: '100%' }}>Click on the Gaucho!</p>
       </div>
       <div className="my-8" style={{ position: 'absolute', left: '35%' }}>
-        <h2 className="text-center text-3xl font-semibold text-orange-900 md:text-5xl">{game?.cookies}</h2>
+        <h2 className="text-center text-3xl font-semibold text-orange-900 md:text-5xl">{game?.cash}</h2>
       </div>
       {isAnimationVisible && (
         <div className="absolute inset-0 flex items-center justify-center" onClick={handleAnimationClick}>
