@@ -10,7 +10,8 @@
                     "y": 0.387,
                     "width": 0.045,
                     "height": 0.11,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "multiplier": 2
                 },
                 {
                     "name": "CLAS",
@@ -20,7 +21,8 @@
                     "y": -10,
                     "width": 0.1,
                     "height": 0.1,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "multiplier": 2
                 }
             ],
             "IncomeBuildings": [
@@ -32,7 +34,8 @@
                     "y": -10,
                     "width": 0.1,
                     "height": 0.1,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "income": 2
                 },
                 {
                     "name": "Phelps Hall",
@@ -42,7 +45,8 @@
                     "y": -10,
                     "width": 0.1,
                     "height": 0.1,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "income": 2
                 }
             ]
         },
@@ -57,7 +61,8 @@
                     "y": -10,
                     "width": 0.1,
                     "height": 0.1,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "multiplier": 2
                 },
                 {
                     "name": "University Center(UCEN)",
@@ -67,7 +72,8 @@
                     "y": -10,
                     "width": 0.1,
                     "height": 0.1,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "multiplier": 2
                 }
             ],
             "IncomeBuildings": [
@@ -79,7 +85,8 @@
                     "y": -10,
                     "width": 0.1,
                     "height": 0.1,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "income": 2
                 },
                 {
                     "name": "Anacapa",
@@ -89,7 +96,8 @@
                     "y": -10,
                     "width": 0.1,
                     "height": 0.1,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "income": 2
                 }
             ]
         }
