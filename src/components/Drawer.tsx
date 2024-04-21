@@ -6,6 +6,10 @@ import MonetaryBuildings from './MonetaryBuildings';
 import './Drawer.css';
 // Use viewport units or percentages for a responsive design
 
+const Scrollable = styled.div`
+  overflow: auto;
+  max-height: 90%;
+`;
 
 const DrawerRight = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +36,7 @@ const DrawerRight = () => {
             style = {{
                 right: buttonPosition,
                 transition: 'right 0.5s',
+                overflow: 'auto'
             }}
             className = "drawer-toggle-button"
             onClick = {toggleDrawer}
@@ -46,7 +51,9 @@ const DrawerRight = () => {
       >
         <h2>Gaucho Store</h2>
         <p>Buy upgrades with your Gaucho Bucks!</p>
-        <MonetaryBuildings/>
+        <Scrollable>
+          <MonetaryBuildings/>
+        </Scrollable>
       </Drawer>
     </div>
   );

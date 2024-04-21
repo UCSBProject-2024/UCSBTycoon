@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import { useGameDispatch } from '../hooks/useGameDispatch';
 import { useGame } from '../hooks/useGame';
 
+
+
 interface BuildingProps {
   x: number;
   y: number;
@@ -17,8 +19,6 @@ const MonetaryBuildings: React.FC = () => {
   // Make building array with useState
   const [buildingArray, setBuildingArray] = useState<BuildingProps[]>([]);
   const [data, setData] = useState([]);
-  const [clickedButtons, setClickedButtons] = useState<Set<string>>(new Set());
-
   useEffect(() => {
     const initialData = localStorage.getItem('gameData');
     const parsedData = JSON.parse(initialData);
@@ -54,33 +54,28 @@ const MonetaryBuildings: React.FC = () => {
   }, []);
 
   const handleClick = (buildingName: string) => () => {
-    if (!clickedButtons.has(buildingName)) { // Check if the building has not been clicked
-      console.log('Building clicked:', buildingName);
-  
-      const cashToDispatch = new Set(['Library', 'CLAS']); //ADD CASH BUILDINGS
-      const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor']); //ADD KNOWLEDGE BUILDINGS
-  
-      if(cashToDispatch.has(buildingName)){
-        gameDispatch({ type: 'update', subtype: 'cash' });  //sends building name to backend
-        console.log('increment cash');
-      }
-      else if(knowledgeToDispatch.has(buildingName)){
-        gameDispatch({ type: 'update', subtype: 'knowledge' });  //sends building name to backend
-        console.log('increment knowledge');
-      }
-  
-      setClickedButtons((prevClickedButtons) => new Set(prevClickedButtons).add(buildingName));
+    console.log('Building clicked:', buildingName);     //Says what building is clicked
+
+    const cashToDispatch = new Set(['Library', 'CLAS']); //ADD CASH BUILDINGS
+    const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor']); //ADD KNOWLEDGE BUILDINGS
+
+
+    if(cashToDispatch.has(buildingName)){
+      gameDispatch({ type: 'update', subtype: 'cash' });  //sends building name to backend
+      console.log('increment cash');
+    }
+    else if(knowledgeToDispatch.has(buildingName)){
+      gameDispatch({ type: 'update', subtype: 'cash' });  //sends building name to backend
+      console.log('increment knowledge');
+
     }
   };
-  
 
   return (
     <div>
       {buildingArray.map((building, index) => {
-        const getButtonColor = (buildingName: string) => {
-          if (clickedButtons.has(buildingName)) {
-            return 'grey'; // Change button color to grey if clicked
-          } else if (
+        const getButtonColor = (buildingName) => {
+          if (
             buildingName === 'Library' ||
             buildingName === 'CLAS' ||
             buildingName === 'Buchanan Hall' ||

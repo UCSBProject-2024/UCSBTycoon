@@ -54,25 +54,17 @@ const MonetaryBuildings: React.FC = () => {
   }, []);
 
   const handleClick = (buildingName: string) => () => {
-    if (!clickedButtons.has(buildingName)) { // Check if the building has not been clicked
-      console.log('Building clicked:', buildingName);
-  
-      const cashToDispatch = new Set(['Library', 'CLAS']); //ADD CASH BUILDINGS
-      const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor']); //ADD KNOWLEDGE BUILDINGS
-  
-      if(cashToDispatch.has(buildingName)){
-        gameDispatch({ type: 'update', subtype: 'cash' });  //sends building name to backend
-        console.log('increment cash');
-      }
-      else if(knowledgeToDispatch.has(buildingName)){
-        gameDispatch({ type: 'update', subtype: 'knowledge' });  //sends building name to backend
-        console.log('increment knowledge');
-      }
-  
-      setClickedButtons((prevClickedButtons) => new Set(prevClickedButtons).add(buildingName));
+    console.log('Building clicked:', buildingName);     //Says what building is clicked
+
+    const cashToDispatch = new Set(['Library', 'CLAS']); //ADD CASH BUILDINGS
+    const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor']); //ADD KNOWLEDGE BUILDINGS
+
+    if (cashToDispatch.has(buildingName) || knowledgeToDispatch.has(buildingName)) {
+      gameDispatch({ type: 'update', subtype: 'cash' });  //sends building name to backend
+      console.log('increment cash');
     }
+    setClickedButtons((prevClickedButtons) => new Set(prevClickedButtons).add(buildingName));
   };
-  
 
   return (
     <div>
