@@ -20,14 +20,6 @@ export function GameCookie() {
     }
   }
 
-  // Define your function to be executed every second
-  function myFunction() {
-    gameDispatch({ type: 'update', subtype: 'knowledge' });
-  }
-
-  // Call the function every second using setInterval
-  const intervalId = setInterval(myFunction, 5000);
-
 
   function onAnimationStart() {
     setIsAnimationPlaying(true);
