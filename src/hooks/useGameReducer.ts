@@ -1,12 +1,12 @@
 import { useImmerReducer } from 'use-immer';
 import { BuildingProps, Game, KnowledgeBuilding, MonetaryBuilding } from '../domains';
+import { Write } from '../components/Write.js';
 
 export type GameReducerAction =
   | { type: 'reload' | 'reset' }
   | { type: 'update'; subtype: 'cash' }
   | { type: 'update'; subtype: 'knowledge' }
-  | { type: 'update'; subtype: 'buildingBought'; buildingName: string }
-  | { type: 'getBuildingData' };
+  | { type: 'update'; subtype: 'buildingBought'; buildingName: string };
 
 export function useGameReducer() {
   return useImmerReducer(gameReducer, null as unknown as Game);
@@ -23,7 +23,9 @@ function gameReducer(draft: Game, action: GameReducerAction) {
       switch (action.subtype) {
         case 'cash': {
           draft.cash = draft.cash + calculateMonetaryMultiplicator(draft.MonetaryMultiplierBuildings);
-          setGameToLocalStorage(draft);
+          Write(draft);
+          console.log(draft.cash);
+          //setGameToLocalStorage(draft);
           return draft;
         }
         case 'knowledge': {
