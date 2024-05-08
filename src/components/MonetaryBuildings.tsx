@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useGameDispatch } from '../hooks/useGameDispatch';
-import { useGame } from '../hooks/useGame';
+//import { useGame } from '../hooks/useGame';
 
 interface BuildingProps {
   x: number;
