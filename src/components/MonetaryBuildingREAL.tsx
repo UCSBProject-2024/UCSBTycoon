@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useGameDispatch } from '../hooks/useGameDispatch';
-import { useGame } from '../hooks/useGame';
-
-
+//import { useGame } from '../hooks/useGame';
 
 interface BuildingProps {
   x: number;
@@ -54,20 +52,17 @@ const MonetaryBuildings: React.FC = () => {
   }, []);
 
   const handleClick = (buildingName: string) => () => {
-    console.log('Building clicked:', buildingName);     //Says what building is clicked
+    console.log('Building clicked:', buildingName); //Says what building is clicked
 
     const cashToDispatch = new Set(['Library', 'CLAS']); //ADD CASH BUILDINGS
     const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor']); //ADD KNOWLEDGE BUILDINGS
 
-
-    if(cashToDispatch.has(buildingName)){
-      gameDispatch({ type: 'update', subtype: 'cash' });  //sends building name to backend
+    if (cashToDispatch.has(buildingName)) {
+      gameDispatch({ type: 'update', subtype: 'cash' }); //sends building name to backend
       console.log('increment cash');
-    }
-    else if(knowledgeToDispatch.has(buildingName)){
-      gameDispatch({ type: 'update', subtype: 'cash' });  //sends building name to backend
+    } else if (knowledgeToDispatch.has(buildingName)) {
+      gameDispatch({ type: 'update', subtype: 'cash' }); //sends building name to backend
       console.log('increment knowledge');
-
     }
   };
 

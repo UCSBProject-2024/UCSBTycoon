@@ -3,8 +3,8 @@ import { useGame } from '../hooks/useGame';
 import { useGameDispatch } from '../hooks/useGameDispatch';
 import { CakeIcon } from './CakeIcon';
 
-import AMoney from "./AMoney.json";
-import Lottie from "lottie-react";
+import AMoney from './AMoney.json';
+import Lottie from 'lottie-react';
 
 export function GameCookie() {
   const game = useGame();
@@ -19,7 +19,6 @@ export function GameCookie() {
       setIsAnimationVisible(true);
     }
   }
-
 
   function onAnimationStart() {
     setIsAnimationPlaying(true);
@@ -36,13 +35,15 @@ export function GameCookie() {
   }
 
   return (
-      <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative' }}>
       <div className="my-8 flex flex-col items-center" style={{ position: 'absolute', top: '30px', zIndex: 2 }}>
         <CakeIcon onClick={handleClick} />
-        <p className="text-xs text-gray-600" style={{ position: 'absolute', top: '100%' }}>Click on the Gaucho!</p>
-        </div>
-        <div className="my-8" style={{ position: 'absolute', left: '35%' }}>
-        <h2 className="text-center text-3xl font-semibold text-orange-900 md:text-5xl">{game?.cash}</h2>
+        <p className="text-xs text-gray-600" style={{ position: 'absolute', top: '100%' }}>
+          Click on the Gaucho!
+        </p>
+      </div>
+      <div className="my-8" style={{ position: 'absolute', left: '35%' }}>
+        <h2 className="text-3xl md:text-5xl text-center font-semibold text-orange-900">{game?.cash}</h2>
       </div>
       {isAnimationVisible && (
         <div className="absolute inset-0 flex items-center justify-center" onClick={handleAnimationClick}>
@@ -51,7 +52,7 @@ export function GameCookie() {
             animationData={AMoney}
             onComplete={onAnimationComplete}
             onAnimationStart={onAnimationStart}
-            style={{ position: 'absolute',top: '-10px', zIndex: 1 }}
+            style={{ position: 'absolute', top: '-10px', zIndex: 1 }}
           />
         </div>
       )}
