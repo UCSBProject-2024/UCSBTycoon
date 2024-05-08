@@ -13,5 +13,6 @@ export function Header() {
         <h2>Chris Woolson, Aavash Adhikari, Tyler Canepa, Zach Duckering </h2>
       </div>
     </header>
+
   );
 }

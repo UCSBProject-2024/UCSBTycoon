@@ -24,6 +24,9 @@ function gameReducer(draft: Game, action: GameReducerAction) {
     case 'update': {
       switch (action.subtype) {
         case 'cash': {
+          if (!draft){
+            draft = getGameFromLocalStorage() as Game;
+          }
           draft.cash = draft.cash + draft.cashMult * calculateMonetaryMultiplicator(draft.MonetaryMultiplierBuildings);
           setGameToLocalStorage(draft);
           return draft;
@@ -153,7 +156,7 @@ function loadInitialGame() {
         cash: 0,
         knowledge: 0,
         cashMult: 1,
-        knowledgeMult: 1 
+        knowledgeMult: 1
       };
       setGameToLocalStorage(initialGame);
       console.log('Initial game loaded:', initialGame);
