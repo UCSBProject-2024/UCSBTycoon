@@ -24,6 +24,9 @@ function gameReducer(draft: Game, action: GameReducerAction) {
     case 'update': {
       switch (action.subtype) {
         case 'cash': {
+          if (!draft){
+            draft = getGameFromLocalStorage() as Game;
+          }
           draft.cash = draft.cash + draft.cashMult * calculateMonetaryMultiplicator(draft.MonetaryMultiplierBuildings);
           setGameToLocalStorage(draft);
           return draft;
