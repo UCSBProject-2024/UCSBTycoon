@@ -5,6 +5,8 @@ export type GameReducerAction =
   | { type: 'reload' | 'reset' }
   | { type: 'update'; subtype: 'cash' }
   | { type: 'update'; subtype: 'knowledge' }
+  | { type: 'update'; subtype: 'cashMult' }
+  | { type: 'update'; subtype: 'knowledgeMult' }
   | { type: 'update'; subtype: 'buildingBought'; buildingName: string }
   | { type: 'getBuildingData' };
 
@@ -22,12 +24,22 @@ function gameReducer(draft: Game, action: GameReducerAction) {
     case 'update': {
       switch (action.subtype) {
         case 'cash': {
-          draft.cash = draft.cash + calculateMonetaryMultiplicator(draft.MonetaryMultiplierBuildings);
+          draft.cash = draft.cash + draft.cashMult * calculateMonetaryMultiplicator(draft.MonetaryMultiplierBuildings);
           setGameToLocalStorage(draft);
           return draft;
         }
         case 'knowledge': {
           draft.knowledge = draft.knowledge + calculateKnowledgeMultiplicator(draft.KnowledgeMultiplierBuildings);
+          setGameToLocalStorage(draft);
+          return draft;
+        }
+        case 'cashMult': {
+          draft.cashMult = Math.pow(2, draft.cashMult);
+          setGameToLocalStorage(draft);
+          return draft;
+        }
+        case 'knowledgeMult': {
+          draft.knowledgeMult = Math.pow(2, draft.knowledgeMult);
           setGameToLocalStorage(draft);
           return draft;
         }
@@ -139,7 +151,9 @@ function loadInitialGame() {
         MonetaryMultiplierBuildings: monetaryMultiplierBuildings,
         KnowledgeMultiplierBuildings: knowledgeMultiplierBuildings,
         cash: 0,
-        knowledge: 0
+        knowledge: 0,
+        cashMult: 1,
+        knowledgeMult: 1 
       };
       setGameToLocalStorage(initialGame);
       console.log('Initial game loaded:', initialGame);

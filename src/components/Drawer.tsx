@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
-//import styled from 'styled-components';
+import styled from 'styled-components';
 import MonetaryBuildings from './MonetaryBuildings';
 import './Drawer.css';
 // Use viewport units or percentages for a responsive design
+
+const Scrollable = styled.div`
+  overflow: auto;
+  max-height: 90%;
+`;
 
 const DrawerRight = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +35,8 @@ const DrawerRight = () => {
       <button
         style={{
           right: buttonPosition,
-          transition: 'right 0.5s'
+          transition: 'right 0.5s',
+          overflow: 'auto'
         }}
         className="drawer-toggle-button"
         onClick={toggleDrawer}>
@@ -44,7 +50,9 @@ const DrawerRight = () => {
       >
         <h2>Gaucho Store</h2>
         <p>Buy upgrades with your Gaucho Bucks!</p>
-        <MonetaryBuildings />
+        <Scrollable>
+          <MonetaryBuildings />
+        </Scrollable>
       </Drawer>
     </div>
   );
