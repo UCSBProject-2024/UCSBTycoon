@@ -7,3 +7,58 @@
     @apply bg-blue-100;
   }
 }
+
+.header {
+  background-color: #003660;
+  color: white;
+  padding: 1vh;
+  height: 12vh;
+  position: relative; /* Required for absolute positioning of title */
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.font1 {
+  display: inline;
+  font-family: Produkt, serif; 
+  font-weight:300; 
+  font-style:normal;
+  margin-top: 1vh;
+  font-size: 6.5vh; /* Adjust the font size as needed */
+  color: #FEBC11;
+}
+
+.font2 {
+  display: inline;
+  font-family: Avenir, "Century Gothic", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 1vh;
+  font-size: 6vh; /* Adjust the font size as needed */
+  color: #FFFFFF;
+}
+
+.title h1 {
+  margin-top: 1vh;
+  font-size: 5vh; /* Adjust the font size as needed */
+  color: #FFFFFF;
+}
+
+.secondary {
+  max-width: 30%; /* Set a maximum width for the secondary text */
+  align-items: right;
+  left: 50%;
+  font-size: 2vh;
+  color: #FFFFFF;
+  font-style: italic;
+  font-family: Avenir, "Century Gothic", sans-serif;
+  font-weight: 100;
+}
+
+
+
