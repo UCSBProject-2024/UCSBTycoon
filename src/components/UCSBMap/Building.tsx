@@ -50,7 +50,7 @@ const Building: React.FC<BuildingProps> = ({ x, y, width, height, src, imageWidt
         width: width * imageWidth + 'px',
         height: height * (imageHeight - 140) + 'px',
         cursor: 'pointer',
-        border: '2px solid gold',
+        border: '1px solid gold',
         borderRadius: '10%'
       }}></img>
   );
