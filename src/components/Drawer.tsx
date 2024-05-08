@@ -21,28 +21,27 @@ const DrawerRight = () => {
   };
 
   useEffect(() => {
-    if (isOpen){
-        //move button out with the drawer width
-        setButtonPosition(drawerWidth);
-    } else{
-        //reset position when drawer is closed
-        setButtonPosition('0px');
+    if (isOpen) {
+      //move button out with the drawer width
+      setButtonPosition(drawerWidth);
+    } else {
+      //reset position when drawer is closed
+      setButtonPosition('0px');
     }
   }, [isOpen, drawerWidth]);
-  
+
   return (
     <div>
-        <button
-            style = {{
-                right: buttonPosition,
-                transition: 'right 0.5s',
-                overflow: 'auto'
-            }}
-            className = "drawer-toggle-button"
-            onClick = {toggleDrawer}
-            >
-               <p>&lt;</p>
-            </button>
+      <button
+        style={{
+          right: buttonPosition,
+          transition: 'right 0.5s',
+          overflow: 'auto'
+        }}
+        className="drawer-toggle-button"
+        onClick={toggleDrawer}>
+        <p>&lt;</p>
+      </button>
       <Drawer
         open={isOpen}
         onClose={toggleDrawer}
@@ -52,7 +51,7 @@ const DrawerRight = () => {
         <h2>Gaucho Store</h2>
         <p>Buy upgrades with your Gaucho Bucks!</p>
         <Scrollable>
-          <MonetaryBuildings/>
+          <MonetaryBuildings />
         </Scrollable>
       </Drawer>
     </div>

@@ -1,5 +1,5 @@
 import { useImmerReducer } from 'use-immer';
-import { BuildingProps, Game, KnowledgeBuilding, MonetaryBuilding } from '../domains';
+import { Game, KnowledgeBuilding, MonetaryBuilding } from '../domains';
 
 export type GameReducerAction =
   | { type: 'reload' | 'reset' }

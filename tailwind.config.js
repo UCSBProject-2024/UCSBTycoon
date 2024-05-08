@@ -2,7 +2,10 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {}
+    extend: {},
+    fontSize: {
+      xs: '0.5rem'
+    }
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')]
 };

@@ -18,7 +18,6 @@ const MonetaryBuildings: React.FC = () => {
   const [buildingArray, setBuildingArray] = useState<BuildingProps[]>([]);
   const [clickedButtons, setClickedButtons] = useState<Set<string>>(new Set());
 
-
   useEffect(() => {
     const initialData = localStorage.getItem('gameData');
     const parsedData = JSON.parse(initialData);
@@ -30,7 +29,7 @@ const MonetaryBuildings: React.FC = () => {
       ...(parsedData?.KnowledgeBuildings?.MultiplierBuildings || []),
       ...(parsedData?.KnowledgeBuildings?.IncomeBuildings || []),
       ...(parsedData?.MoneyBuildings?.MultiplierBuildings || []),
-      ...(parsedData?.MoneyBuildings?.IncomeBuildings || []),
+      ...(parsedData?.MoneyBuildings?.IncomeBuildings || [])
     ];
 
     // Iterate through all buildings to set initial state and add them to the newBuildings array
@@ -52,14 +51,12 @@ const MonetaryBuildings: React.FC = () => {
       const cashToDispatch = new Set(['Library', 'CLAS']); //ADD CASH BUILDINGS
       const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor']); //ADD KNOWLEDGE BUILDINGS
 
-      if(cashToDispatch.has(buildingName)){
-        gameDispatch({ type: 'update', subtype: 'cashMult' });  //sends building name to backend
+      if (cashToDispatch.has(buildingName)) {
+        gameDispatch({ type: 'update', subtype: 'cashMult' }); //sends building name to backend
         console.log('increment cash');
-      }
-      else if(knowledgeToDispatch.has(buildingName)){
-        gameDispatch({ type: 'update', subtype: 'knowledgeMult' });  //sends building name to backend
+      } else if (knowledgeToDispatch.has(buildingName)) {
+        gameDispatch({ type: 'update', subtype: 'knowledgeMult' }); //sends building name to backend
         console.log('increment knowledge');
-  
       }
       setClickedButtons((prevClickedButtons) => new Set(prevClickedButtons).add(buildingName));
     }
