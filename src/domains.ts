@@ -1,12 +1,32 @@
 export interface Game {
   title: string;
-  tools: Tool[];
-  cookies: number;
+  MonetaryMultiplierBuildings: MonetaryBuilding[];
+  MonetaryIncomeBuildings: MonetaryBuilding[];
+  KnowledgeMultiplierBuildings: KnowledgeBuilding[];
+  KnowledgeIncomeBuildings: KnowledgeBuilding[];
+  cash: number;
+  knowledge: number;
 }
 
-export interface Tool {
-  id: number;
-  multiplicator: number;
+export interface MonetaryBuilding {
+  name: string;
+  income: number;
   price: number;
   active: boolean;
+}
+
+export interface KnowledgeBuilding {
+  name: string;
+  income: number;
+  price: number;
+  active: boolean;
+}
+
+export interface BuildingProps {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  hasBeenBought?: boolean;
+  src: string;
 }

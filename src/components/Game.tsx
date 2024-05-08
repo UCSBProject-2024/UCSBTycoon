@@ -3,8 +3,6 @@ import { useGameDispatch } from '../hooks/useGameDispatch';
 import MapWindow from './UCSBMap/MapWindow';
 import { Header } from './Header';
 import { GameCookie } from './GameCookie';
-import { GameTools } from './GameTools';
-import { GameReset } from './GameReset';
 import React from 'react';
 import './Game.css';
 import DrawerRight from './Drawer';

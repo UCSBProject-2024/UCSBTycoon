@@ -10,7 +10,8 @@
                     "y": 0.39,
                     "width": 0.045,
                     "height": 0.11,
-                    "hasBeenBought": false
+                    "hasBeenBought": false,
+                    "multiplier": 2
                 },
                 {
                     "name": "Student Resource Building(SRB)",
