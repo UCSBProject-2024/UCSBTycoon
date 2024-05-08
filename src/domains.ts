@@ -6,8 +6,8 @@ export interface Game {
   KnowledgeIncomeBuildings: KnowledgeBuilding[];
   cash: number;
   knowledge: number;
+  knowledgeMult: number;
   cashMult: number;
-  knowledgeMult: number
 }
 
 export interface MonetaryBuilding {
