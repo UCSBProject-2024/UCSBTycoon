@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,3 +8,14 @@
     @apply bg-blue-100;
   }
 }
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-orange-100;
+  }
+}
+>>>>>>> Stashed changes

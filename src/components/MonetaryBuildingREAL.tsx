@@ -56,7 +56,7 @@ const MonetaryBuildings: React.FC = () => {
   const handleClick = (buildingName: string) => () => {
     console.log('Building clicked:', buildingName);     //Says what building is clicked
 
-    const cashToDispatch = new Set(['Library', 'CLAS']); //ADD CASH BUILDINGS
+    const cashToDispatch = new Set(['Library', 'CLAS', 'Buchanan Hall', 'Phelps Hall']); //ADD CASH BUILDINGS
     const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor']); //ADD KNOWLEDGE BUILDINGS
 
 

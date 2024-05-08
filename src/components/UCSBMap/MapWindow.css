@@ -1,4 +1,18 @@
+<<<<<<< Updated upstream
 .MapWindow{
     max-height: 100vh;
     overflow-y: hidden;
+=======
+.MapWindow{
+    position: relative;
+    top: 10%;
+    left: 0;
+    width: 60vw; /* 100% of the viewport width */
+    height: 80vh; /* 100% of the viewport height */
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+>>>>>>> Stashed changes
 }

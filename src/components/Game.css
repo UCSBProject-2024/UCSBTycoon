@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .SplitScreen {
     display: flex;
     
@@ -10,3 +11,17 @@
     .ControlsRight{
       width: 30%;
     }
+=======
+.SplitScreen {
+  display: flex;
+
+  .MapLeft {
+    width: 80%; 
+  }
+  .ControlsRight { 
+    width: 20%; 
+  } 
+}
+
+
+>>>>>>> Stashed changes

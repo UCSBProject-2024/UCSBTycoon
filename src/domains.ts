@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 export interface Game {
   title: string;
   MonetaryMultiplierBuildings: MonetaryBuilding[];
@@ -32,3 +33,17 @@ export interface BuildingProps {
   hasBeenBought?: boolean;
   src: string;
 }
+=======
+export interface Game {
+  title: string;
+  tools: Tool[];
+  cookies: number;
+}
+
+export interface Tool {
+  id: number;
+  multiplicator: number;
+  price: number;
+  active: boolean;
+}
+>>>>>>> Stashed changes

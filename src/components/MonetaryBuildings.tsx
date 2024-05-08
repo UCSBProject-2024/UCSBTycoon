@@ -11,12 +11,25 @@ interface BuildingProps {
   description: string;
 }
 
+const knowledgeGenerator = setInterval(() => {
+  gameDispatch({ type: 'update', subtype: 'knowledge' }); // Increment knowledge in the backend
+}, 1000); // Increment knowledge every 1 second
+
+
+return () => {
+
+  clearInterval(knowledgeGenerator); // Clean up the interval when the component unmounts
+};
+}, []);
+
 const MonetaryBuildings: React.FC = () => {
   const gameDispatch = useGameDispatch();
 
   // Make building array with useState
   const [buildingArray, setBuildingArray] = useState<BuildingProps[]>([]);
   const [clickedButtons, setClickedButtons] = useState<Set<string>>(new Set());
+
+  
 
 
   useEffect(() => {
@@ -48,9 +61,12 @@ const MonetaryBuildings: React.FC = () => {
       console.log('Building clicked:', buildingName);
 
       // Mark the building as bought in local storage
+      if(buildingName == 'Library' && ){
+
+      }
       localStorage.setItem(buildingName, 'true');
-      const cashToDispatch = new Set(['Library', 'CLAS']); //ADD CASH BUILDINGS
-      const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor']); //ADD KNOWLEDGE BUILDINGS
+      const cashToDispatch = new Set(['Library', 'CLAS', 'Buchanan Hall', 'Phelps Hall']); //ADD CASH BUILDINGS
+      const knowledgeToDispatch = new Set(['University Center(UCEN)', 'Arbor', 'Anacapa']); //ADD KNOWLEDGE BUILDINGS
 
       if(cashToDispatch.has(buildingName)){
         gameDispatch({ type: 'update', subtype: 'cashMult' });  //sends building name to backend
