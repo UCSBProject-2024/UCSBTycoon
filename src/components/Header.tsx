@@ -13,7 +13,7 @@ export function Header() {
         <h2>Chris Woolson, Aavash Adhikari, Tyler Canepa, Zach Duckering </h2>
       </div>
     </header>
-    
+
     /*<header className="bg-blue-900 py-2">
       <div className="text-right text-xs text-yellow-400">Chris Woolson, Chris Woolson,
        Chris Woolson, Chris Woolson</div>
