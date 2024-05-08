@@ -184,9 +184,8 @@ function calculateMonetaryMultiplicator(buildings: MonetaryBuilding[]) {
 }
 
 async function knowledgeGenerator() {
-  var data
   setInterval(async () => {
-    data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COOKIE_CLICKER_GAME_KEY)) as Game
+    const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COOKIE_CLICKER_GAME_KEY)) as Game
     gameReducer(data, { type: 'update', subtype: 'knowledge' });
   }, 1000);  // Main interval every 1000ms
 }
