@@ -18,6 +18,7 @@ export function GameCookie() {
   const [isAnimationPlaying, setIsAnimationPlaying] = useState(false);
 
   function handleClick() {
+    gameDispatch({ type: 'update', subtype: 'knowledge' });
     gameDispatch({ type: 'update', subtype: 'cash' });
     if (!isAnimationPlaying) {
       setIsAnimationVisible(true);

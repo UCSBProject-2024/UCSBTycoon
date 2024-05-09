@@ -16,10 +16,10 @@ const Building: React.FC<BuildingProps> = ({ x, y, width, height, src, imageWidt
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
-    // if (!isClicked) {
-    //   //Set backend to owning building
-    //   setIsClicked(true);
-    // }
+    if (!isClicked) {
+      //Set backend to owning building
+      setIsClicked(true);
+    }
     
     // Perform cool animation here
     console.log('Building clicked!');
