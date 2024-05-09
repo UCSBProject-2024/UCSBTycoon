@@ -51,7 +51,7 @@ const CollegeRankings: React.FC = () => {
 
   useEffect(() => {
     if (game) {
-      const currentKnowledge = game?.cash;
+      const currentKnowledge = game?.knowledge;
       setData(prevData => {
         const newData = [...prevData];
         const playerCollegeIndex = newData.findIndex(item => item.label === 'UC Santa Barbara');
