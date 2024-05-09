@@ -7,8 +7,8 @@ import { Game, KnowledgeBuilding, MonetaryBuilding } from '../domains';
 const LOCAL_STORAGE_COOKIE_CLICKER_GAME_KEY = 'c1eabe78-8bc4-4fdc-9a2e-4aa39583fa15-cookie-clicker-game';
 
 
-import AMoney from "./AMoney.json";
-import Lottie from "lottie-react";
+import AMoney from './AMoney.json';
+import Lottie from 'lottie-react';
 
 export function GameCookie() {
   const game = useGame();
@@ -24,9 +24,7 @@ export function GameCookie() {
       setIsAnimationVisible(true);
     }
   }
-
   
-
   function onAnimationStart() {
     setIsAnimationPlaying(true);
   }

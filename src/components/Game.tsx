@@ -6,6 +6,7 @@ import { GameCookie } from './GameCookie';
 import React from 'react';
 import './Game.css';
 import DrawerRight from './Drawer';
+import RankingDrawer from './RankingDrawer';
 
 export function Game() {
   const gameDispatch = useGameDispatch();
@@ -38,6 +39,7 @@ export function Game() {
         </div>
         <div className="ControlsRight">
           <DrawerRight />
+          <RankingDrawer />
           <GameCookie />
         </div>
       </div>

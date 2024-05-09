@@ -27,6 +27,12 @@ function gameReducer(draft: Game, action: GameReducerAction) {
       switch (action.subtype) {
         case 'knowledgeIncrementAmount': {
           draft.knowledgeMult += action.incrementKnowledgeAmount;
+        }
+        case 'cash': {
+          if (!draft){
+            draft = getGameFromLocalStorage() as Game;
+          }
+          draft.cash = draft.cash + draft.cashMult * calculateMonetaryMultiplicator(draft.MonetaryMultiplierBuildings);
           setGameToLocalStorage(draft);
           return draft;
         }
@@ -162,6 +168,7 @@ function loadInitialGame() {
         knowledge: 0,
         knowledgeMult: 1,
         cashMult: 1,
+        knowledgeMult: 1
       };
       setGameToLocalStorage(initialGame);
       console.log('Initial game loaded:', initialGame);
