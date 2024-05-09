@@ -36,11 +36,6 @@ function gameReducer(draft: Game, action: GameReducerAction) {
           setGameToLocalStorage(draft);
           return draft;
         }
-        case 'cash': {
-          draft.cash = draft.cash + draft.cashMult * calculateMonetaryMultiplicator(draft.MonetaryMultiplierBuildings);
-          setGameToLocalStorage(draft);
-          return draft;
-        }
         case 'cashMult': {
           draft.cashMult = Math.pow(2, draft.cashMult);
           setGameToLocalStorage(draft);
