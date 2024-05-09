@@ -1,96 +1,10 @@
 {
-    "KnowledgeBuildings":
-        {
-            "MultiplierBuildings": [
-                {
-                    "name": "Library",
-                    "description": "(Multiplier Building) Built in 1954, the UCSB Library holds over 3 million volumes and is a center for research and study.",
-                    "src": "./Images/LibraryImg.png",
-                    "x": 0.346,
-                    "y": 0.39,
-                    "width": 0.045,
-                    "height": 0.11,
-                    "hasBeenBought": false,
-                    "multiplier": 2
-                },
-                {
-                    "name": "Student Resource Building(SRB)",
-                    "description": "(Multiplier Building) Built in 2007, the SRB is a hub for student organizations and resources.",
-                    "src": "./Images/SRB.png",
-                    "x": 0.055,
-                    "y": 0.498,
-                    "width": 0.04,
-                    "height": 0.034,
-                    "hasBeenBought": false
-                }
-            ],
-            "IncomeBuildings": [
-                {
-                    "name": "Phelps Hall",
-                    "description": "(Generator Building) Built in 1965, it is a campus-shared classroom and office space.",
-                    "src": "./Images/PhelpsHall.png",
-                    "x": 0.39,
-                    "y": 0.28,
-                    "width": 0.045,
-                    "height": 0.06,
-                    "hasBeenBought": false
-                },
-                {
-                    "name": "Campbell Hall",
-                    "description": "(Generator Building) Built in 1961, it is a lecture and recital hall that seats 862 people.",
-                    "src": "./Images/CampbellHall.png",
-                    "x": 0.36,
-                    "y": 0.29,
-                    "width": 0.03,
-                    "height": 0.03,
-                    "hasBeenBought": false
-                },
-                {
-                    "name": "Harold Frank Hall",
-                    "description": "(Generator Building) Built in 1965, it is a 60,000 square foot building that primarily houses the Computer Science, Electrical and Computer Engineering departments.",
-                    "src": "./Images/HaroldFrankHall.png",
-                    "x": 0.51,
-                    "y": 0.43,
-                    "width": 0.044,
-                    "height": 0.028,
-                    "hasBeenBought": false
-                },
-                {
-                    "name": "Buchanan Hall",
-                    "description": "(Generator Building) Built in 1967, it is a lecture hall that seats 727 people across its 4 lecture halls and 1 classroom.",
-                    "src": "./Images/BuchananHall.png",
-                    "x": 0.39,
-                    "y": 0.34,
-                    "width": 0.03,
-                    "height": 0.03,
-                    "hasBeenBought": false
-                },
-                {
-                    "name": "Chemistry Building",
-                    "description": "(Generator Building) Built in 1964, it houses an impressive collection of Mass Spectrometry, NMR Spectroscopy, Optical Characterization, and X-ray facilities.",
-                    "src": "./Images/ChemistryBuilding.png",
-                    "x": 0.42,
-                    "y": 0.34,
-                    "width": 0.09,
-                    "height": 0.03,
-                    "hasBeenBought": false
-                },
-                {
-                    "name": "Broida Hall",
-                    "description": "(Generator Building) Built in 1967, it houses the Physics Department and has 7 lecture halls/classrooms.",
-                    "src": "./Images/BroidaHall.png",
-                    "x": 0.42,
-                    "y": 0.395,
-                    "width": 0.08,
-                    "height": 0.05,
-                    "hasBeenBought": false
-                }
-            ]
-        },
     "MoneyBuildings":
         {
             "MultiplierBuildings": [
                 {
+                    "cost": 100,
+                    "knowledge": 50,
                     "name": "The Club & Guest House",
                     "description": "(Multiplier Building) Built in 1968, it features 34 hotel-style rooms, a restaurant, private meeting areas, and conference spaces.",
                     "src": "./Images/ClubHouse.png",
@@ -101,6 +15,8 @@
                     "hasBeenBought": false
                 },
                 {
+                    "cost": 500,
+                    "knowledge": 250,
                     "name": "University Center(UCEN)",
                     "description": "(Multiplier Building) Built in 1964, it is a student oriented environment that houses the campus bookstore, a food court, and other student services.",
                     "src": "./Images/UCEN.png",
@@ -113,6 +29,8 @@
             ],
             "IncomeBuildings": [
                 {
+                    "cost": 3000,
+                    "knowledge": 1500,
                     "name": "De La Guerra Dining Hall",
                     "description": "(Generator Building) Built in 1958, it was renovated in 2004 and has 25,000 square feet of dining space.",
                     "src": "./Images/DLG.png",
@@ -123,6 +41,8 @@
                     "hasBeenBought": false
                 },
                 {
+                    "cost": 25000,
+                    "knowledge": 12500,
                     "name": "San Miguel Residence Hall",
                     "description": "(Generator Building) Built in 1962, it comprises of two, eight-story towers and has a mix of single, double, and triple rooms.",
                     "src": "./Images/SanMig.png",
@@ -133,6 +53,8 @@
                     "hasBeenBought": false
                 },
                 {
+                    "cost": 200000,
+                    "knowledge": 100000,
                     "name": "San Nicholas Residence Hall",
                     "description": "(Generator Building) Built in 1964, it is an eight-story building with a mix of single, double, and triple rooms.",
                     "src": "./Images/SanNicholasHall.png",
@@ -143,6 +65,8 @@
                     "hasBeenBought": false
                 },
                 {
+                    "cost": 1000000,
+                    "knowledge": 500000,
                     "name": "Santa Cruz Residence Hall",
                     "description": "(Generator Building) Built in 1958, it is a two-story residence hall with triple rooms and a total of 600 residents.",
                     "src": "./Images/SantaCruzHall.png",
@@ -153,6 +77,8 @@
                     "hasBeenBought": false
                 },
                 {
+                    "cost": 5000000,
+                    "knowledge": 2500000,
                     "name": "Anacapa Residence Hall",
                     "description": "(Generator Building) Built in 1958, it is a two-story residence hall with triple rooms and a total of 600 residents.",
                     "src": "./Images/AnacapaHall.png",
@@ -163,6 +89,8 @@
                     "hasBeenBought": false
                 },
                 {
+                    "cost": 15000000,
+                    "knowledge": 7500000,
                     "name": "Carrillo Dining Hall",
                     "description": "(Generator Building) Built in 1967, it is a dining hall with indoor and outdoor seating and a variety of food options.",
                     "src": "./Images/Carrillo.png",
@@ -173,6 +101,8 @@
                     "hasBeenBought": false
                 },
                 {
+                    "cost": 500000000,
+                    "knowledge": 250000000,
                     "name": "Ortega Dining Hall",
                     "description": "(Generator Building) Built in 1956, it was the first permanent dining facility on campus.",
                     "src": "./Images/Ortega.png",
@@ -180,6 +110,110 @@
                     "y": 0.594,
                     "width": 0.035,
                     "height": 0.035,
+                    "hasBeenBought": false
+                }
+            ]
+        },
+        "KnowledgeBuildings":
+        {
+            "MultiplierBuildings": [
+                {
+                    "cost": 100,
+                    "knowledge": 100,
+                    "name": "Library",
+                    "description": "(Multiplier Building) Built in 1954, the UCSB Library holds over 3 million volumes and is a center for research and study.",
+                    "src": "./Images/LibraryImg.png",
+                    "x": 0.346,
+                    "y": 0.39,
+                    "width": 0.045,
+                    "height": 0.11,
+                    "hasBeenBought": false,
+                    "multiplier": 2
+                },
+                {
+                    "cost": 500,
+                    "knowledge": 500,
+                    "name": "Student Resource Building(SRB)",
+                    "description": "(Multiplier Building) Built in 2007, the SRB is a hub for student organizations and resources.",
+                    "src": "./Images/SRB.png",
+                    "x": 0.055,
+                    "y": 0.498,
+                    "width": 0.04,
+                    "height": 0.034,
+                    "hasBeenBought": false
+                }
+            ],
+            "IncomeBuildings": [
+                {
+                    "cost": 3000,
+                    "knowledge": 3000,
+                    "name": "Phelps Hall",
+                    "description": "(Generator Building) Built in 1965, it is a campus-shared classroom and office space.",
+                    "src": "./Images/PhelpsHall.png",
+                    "x": 0.39,
+                    "y": 0.28,
+                    "width": 0.045,
+                    "height": 0.06,
+                    "hasBeenBought": false
+                },
+                {
+                    "cost": 25000,
+                    "knowledge": 25000,
+                    "name": "Campbell Hall",
+                    "description": "(Generator Building) Built in 1961, it is a lecture and recital hall that seats 862 people.",
+                    "src": "./Images/CampbellHall.png",
+                    "x": 0.36,
+                    "y": 0.29,
+                    "width": 0.03,
+                    "height": 0.03,
+                    "hasBeenBought": false
+                },
+                {
+                    "cost": 200000,
+                    "knowledge": 200000,
+                    "name": "Harold Frank Hall",
+                    "description": "(Generator Building) Built in 1965, it is a 60,000 square foot building that primarily houses the Computer Science, Electrical and Computer Engineering departments.",
+                    "src": "./Images/HaroldFrankHall.png",
+                    "x": 0.51,
+                    "y": 0.43,
+                    "width": 0.044,
+                    "height": 0.028,
+                    "hasBeenBought": false
+                },
+                {
+                    "cost": 1000000,
+                    "knowledge": 1000000,
+                    "name": "Buchanan Hall",
+                    "description": "(Generator Building) Built in 1967, it is a lecture hall that seats 727 people across its 4 lecture halls and 1 classroom.",
+                    "src": "./Images/BuchananHall.png",
+                    "x": 0.39,
+                    "y": 0.34,
+                    "width": 0.03,
+                    "height": 0.03,
+                    "hasBeenBought": false
+                },
+                {
+                    "cost": 5000000,
+                    "knowledge": 5000000,
+                    "name": "Chemistry Building",
+                    "description": "(Generator Building) Built in 1964, it houses an impressive collection of Mass Spectrometry, NMR Spectroscopy, Optical Characterization, and X-ray facilities.",
+                    "src": "./Images/ChemistryBuilding.png",
+                    "x": 0.42,
+                    "y": 0.34,
+                    "width": 0.09,
+                    "height": 0.03,
+                    "hasBeenBought": false
+                },
+                {
+                    "cost": 15000000,
+                    "knowledge": 15000000,
+                    "name": "Broida Hall",
+                    "description": "(Generator Building) Built in 1967, it houses the Physics Department and has 7 lecture halls/classrooms.",
+                    "src": "./Images/BroidaHall.png",
+                    "x": 0.42,
+                    "y": 0.395,
+                    "width": 0.08,
+                    "height": 0.05,
                     "hasBeenBought": false
                 }
             ]

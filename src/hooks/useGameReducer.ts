@@ -4,10 +4,11 @@ import { Game, KnowledgeBuilding, MonetaryBuilding } from '../domains';
 export type GameReducerAction =
   | { type: 'reload' | 'reset' }
   | { type: 'update'; subtype: 'cash' }
-  | { type: 'update'; subtype: 'knowledge' }
   | { type: 'update'; subtype: 'cashMult' }
-  | { type: 'update'; subtype: 'knowledgeMult' }
+  | { type: 'update'; subtype: 'setCash'; cash: number }
   | { type: 'update'; subtype: 'buildingBought'; buildingName: string }
+  | { type: 'update'; subtype: 'knowledgeIncrementAmount'; incrementKnowledgeAmount: number}
+  | { type: 'update'; subtype: 'knowledge'}
   | { type: 'getBuildingData' };
 
 export function useGameReducer() {
@@ -19,10 +20,14 @@ const LOCAL_STORAGE_COOKIE_CLICKER_GAME_KEY = 'c1eabe78-8bc4-4fdc-9a2e-4aa39583f
 function gameReducer(draft: Game, action: GameReducerAction) {
   switch (action.type) {
     case 'reload': {
+      knowledgeGenerator();
       return getGameFromLocalStorage();
     }
     case 'update': {
       switch (action.subtype) {
+        case 'knowledgeIncrementAmount': {
+          draft.knowledgeMult += action.incrementKnowledgeAmount;
+        }
         case 'cash': {
           if (!draft){
             draft = getGameFromLocalStorage() as Game;
@@ -31,8 +36,8 @@ function gameReducer(draft: Game, action: GameReducerAction) {
           setGameToLocalStorage(draft);
           return draft;
         }
-        case 'knowledge': {
-          draft.knowledge = draft.knowledge + calculateKnowledgeMultiplicator(draft.KnowledgeMultiplierBuildings);
+        case 'cash': {
+          draft.cash = draft.cash + draft.cashMult * calculateMonetaryMultiplicator(draft.MonetaryMultiplierBuildings);
           setGameToLocalStorage(draft);
           return draft;
         }
@@ -41,8 +46,14 @@ function gameReducer(draft: Game, action: GameReducerAction) {
           setGameToLocalStorage(draft);
           return draft;
         }
-        case 'knowledgeMult': {
-          draft.knowledgeMult = Math.pow(2, draft.knowledgeMult);
+        case 'setCash': {
+          draft.cash = draft.cash-action.cash;
+          setGameToLocalStorage(draft);
+          return draft;
+        }
+        case 'knowledge': {
+          draft.knowledge = draft.knowledge + draft.knowledgeMult
+          console.log('KNOWLEDGE: ', draft.knowledge)
           setGameToLocalStorage(draft);
           return draft;
         }
@@ -155,6 +166,7 @@ function loadInitialGame() {
         KnowledgeMultiplierBuildings: knowledgeMultiplierBuildings,
         cash: 0,
         knowledge: 0,
+        knowledgeMult: 1,
         cashMult: 1,
         knowledgeMult: 1
       };
@@ -178,11 +190,11 @@ function calculateMonetaryMultiplicator(buildings: MonetaryBuilding[]) {
   }, 1);
 }
 
-function calculateKnowledgeMultiplicator(buildings: KnowledgeBuilding[]) {
-  return buildings.reduce((total, building) => {
-    if (!building.active) return total;
-    return total * building.income;
-  }, 1);
+async function knowledgeGenerator() {
+  setInterval(async () => {
+    const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COOKIE_CLICKER_GAME_KEY)) as Game
+    gameReducer(data, { type: 'update', subtype: 'knowledge' });
+  }, 1000);  // Main interval every 1000ms
 }
 
 // A variable to store the cached data

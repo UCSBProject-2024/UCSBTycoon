@@ -12,6 +12,7 @@ interface BuildingProps {
 }
 
 const Building: React.FC<BuildingProps> = ({ x, y, width, height, src, imageWidth, imageHeight }) => {
+
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
@@ -19,7 +20,7 @@ const Building: React.FC<BuildingProps> = ({ x, y, width, height, src, imageWidt
       //Set backend to owning building
       setIsClicked(true);
     }
-
+    
     // Perform cool animation here
     console.log('Building clicked!');
   };
