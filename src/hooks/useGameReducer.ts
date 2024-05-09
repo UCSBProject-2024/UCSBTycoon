@@ -168,7 +168,6 @@ function loadInitialGame() {
         knowledge: 0,
         knowledgeMult: 1,
         cashMult: 1,
-        knowledgeMult: 1
       };
       setGameToLocalStorage(initialGame);
       console.log('Initial game loaded:', initialGame);
